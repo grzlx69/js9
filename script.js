@@ -1,12 +1,11 @@
-function greetings(name) {
+function greetings() {
+    let name = prompt("Как вас зовут?");
     console.log("Привет, " + name);
 };
+greetings();
 
-greetings("Рома");
-
-function computer_information(cpu,gpu,memory,not_gpu = "Нет"){
+function computer_information(cpu,gpu,memory){
     console.log(`У тебя стоит процессор ${cpu} Видеокарта ${gpu} Оперативная память ${memory}`)
-    console.log(`У тебя стоит процессор ${cpu} Видеокарта ${not_gpu} Оперативная память ${memory}`)
 };
 
 computer_information("intel i5 12400F", "RTX 3060", "32gb");
