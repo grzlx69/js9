@@ -2,13 +2,12 @@ function greetings() {
     let name = prompt("Как вас зовут?");
     console.log("Привет, " + name);
 };
-greetings();
 
-function computer_information(cpu,gpu,memory){
+
+function computer_information(cpu, gpu, memory=""){
     console.log(`У тебя стоит процессор ${cpu} Видеокарта ${gpu} Оперативная память ${memory}`)
 };
 
-computer_information("intel i5 12400F", "RTX 3060", "32gb");
 
 let normal_temperature = 0;
 let bad_temperature = 0;
@@ -23,7 +22,7 @@ let timer_id = setInterval(() => {
 }, 1000);
 
 
-function undervoltGPU(gpu_model = "RTX 3060") {
+function undervoltGPU(gpu_model) {
     console.log(`Давайте андервольтнем вашу видеокарту ${gpu_model}`)
     let voltage = 1;
     let frequency = 1900; 
@@ -41,6 +40,14 @@ function undervoltGPU(gpu_model = "RTX 3060") {
 function cleanComputer(){
     console.log("Мы почистили ваш компьютьер и поменяли термопасту, вы полностью готовы покорять новые игры!");
 }
+
+
+
+gpu_model = "RTX 3060"
+cpu = "intel i5 12400F"
+greetings();
+computer_information(cpu, gpu_model, "32gb");
+computer_information(cpu, gpu_model, "нет");
 
 setTimeout(() => {
     clearInterval(timer_id);
@@ -62,8 +69,3 @@ setTimeout(() => {
         console.log("Всего хорошего")
     }
 }, 20000);
-
-
-
-
-
